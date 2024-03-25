@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:  100vh;
+        }
+        .clock-bck{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(177, 56, 56);
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock-bck"></div>
+    </div>
+
+
+    <script>
+      const clock =  document.querySelector('.clock-bck')
+      
+      
+      setInterval(function(){
+        const  date = new Date()
+        clock.innerHTML = date.toLocaleTimeString()
+      },1000)
+    </script>
+</body>
+</html>
