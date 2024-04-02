@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+<button id="Start">Start</button>
+<button id="Stop">Stop</button>
+<button id="clear">Clear</button>
+    <script>
+        let [sec,min,hrs] = [0,0,0]
+        let timer = document.querySelector('#timer')
+        let btnStart = document.querySelector('#Start')
+        let btnStop = document.querySelector('#Stop')
+        let btnClear = document.querySelector('#clear')
+     
+        function stopWatch(){
+            sec++
+            if(sec === 60){
+                sec = 0
+                min++
+                if(min===60){
+                    min = 0
+                    hrs++
+                }
+            }
+
+            let s = sec < 10 ? '0' + sec : sec
+            let m = min < 10   ? '0' + min : min
+
+        
+            let h = hrs < 10 ? '0' + hrs : hrs
+            
+            timer.innerHTML = `${s}:${m}:${h}`
+        }
+
+        let interval;
+function watchStart(){
+     interval =  setInterval(stopWatch,1000)
+        }
+
+
+
+ btnStart.addEventListener('click',()=>{
+    watchStart()
+ })
+
+
+
+
+btnStop.addEventListener('click',()=>{
+    clearInterval(interval)
+
+})
+
+btnClear.addEventListener('click',()=>{
+sec = 0
+min = 0 
+hrs = 0  
+timer.innerHTML = `00:00:00`
+})
+      
+    </script>
+</body>
+</html>
