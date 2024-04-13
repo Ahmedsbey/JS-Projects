@@ -3,19 +3,24 @@ const apiKey = `c3fdc1d0036156bf7bd69ff84d590038`
 let city = ``
 const input = document.querySelector('#cityName')
 const search = document.querySelector('#search')
-const par = document.querySelector('#p')
+const cityname = document.querySelector('#city')
+const temperature = document.querySelector('#temp')
+const wind = document.querySelector('#wind')
+const humidity = document.querySelector('#humidity')
+
 search.addEventListener('click', async(e)=>{
     e.preventDefault()
     city = input.value
    await run()
 })
-
-
 async function run(){
    response = await fetch(`${api}${city}&appid=${apiKey}`)
    let data = await response.json()
-        // city = input.value
-   console.log(input.value)
-   par.innerHTML = `${input.value}<p>${data.main.temp}</p>`
-    
+   // console.log(data)
+   // console.log(input.value)
+   cityname.innerHTML = `${input.value.toUpperCase()}`
+   temperature.innerHTML = `${(data.main.temp.toFixed(0))}°C`
+   wind.innerHTML = `${data.wind.speed.toFixed(0)} KMPH`
+   humidity.innerHTML = `${data.main.humidity}%`
+
 }

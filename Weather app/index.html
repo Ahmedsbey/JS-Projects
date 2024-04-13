@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p id="p">city</p>
+<div class="container">
+    <div class="inputfield">
 <label for="cityName">Enter city name
 <input type="text" name="" id="cityName"></label>
 <button id="search">Search</button>
-
-
+</div>
+<div class="data">
+<p id="city">City</p>
+<p >Temp :<span id="temp"></span></p>
+<p >wind :<span id="wind"></span</p>
+<p >humidity :<span id="humidity"></span</p>
+</div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>

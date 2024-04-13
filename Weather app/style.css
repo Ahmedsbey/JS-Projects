@@ -1,0 +1,20 @@
+body{
+    background-color: #212221;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.container{
+    height: 100vh;
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.data{
+    display: flex;
+}
+.data p{
+    margin: 20px;
+}
