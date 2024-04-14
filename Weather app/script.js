@@ -1,11 +1,10 @@
 const api = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`
 const apiKey = `c3fdc1d0036156bf7bd69ff84d590038`
 let city = ``
-const input = document.querySelector('#cityName')
-const search = document.querySelector('#search')
-const cityname = document.querySelector('#city')
-const errorp = document.querySelector('#error')
-const temperature = document.querySelector('#temp')
+const input = document.querySelector('#search')
+const search = document.querySelector('#searchBtn')
+const cityname = document.querySelector('#location')
+const temperature = document.querySelector('#temperature')
 const wind = document.querySelector('#wind')
 const humidity = document.querySelector('#humidity')
 search.addEventListener('click', async(e)=>{
@@ -26,7 +25,6 @@ async function run(){
       humidity.innerHTML = `${data.main.humidity}%`
    } catch (error) {
       console.error(error.message)
-      errorp.innerHTML = `${input.value} ${error.message}`
-    
+    alert(error.message)
    }
 }
