@@ -76,3 +76,9 @@ body {
         opacity: 0;
     }
 }
+
+@media screen and (max-width:450px){
+    .weather-container {
+        width: calc(90% - 50px); 
+    }
+}
