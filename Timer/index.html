@@ -51,6 +51,8 @@
         let interval;
 function watchStart(){
      interval =  setInterval(stopWatch,1000)
+     btnStart.disabled = true ;
+     btnStop.disabled= false
         }
 
 
@@ -64,7 +66,9 @@ function watchStart(){
 
 btnStop.addEventListener('click',()=>{
     clearInterval(interval)
-
+btnStart.disabled = false ;
+btnStop.disabled = true 
+  
 })
 
 btnClear.addEventListener('click',()=>{
@@ -72,6 +76,7 @@ sec = 0
 min = 0 
 hrs = 0  
 timer.innerHTML = `00:00:00`
+btnStart.disabled = false ;
 })
       
     </script>
