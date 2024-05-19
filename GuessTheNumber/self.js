@@ -68,14 +68,14 @@ remguess++
 guessReamain.innerHTML = `${11 - remguess}` 
 }
 
-function displayMessege(message){
-    lowOrHi.innerHTML = `<h2>${message}<h2>`
-}
+  function displayMessege(message){
+      lowOrHi.innerHTML = `<h2>${message}<h2>`
+  }
 
 
 function endGame(){
 userInput.value = ''
-subbtn.setAttribute('disabled')
+subbtn.disabled = true
 p.classList.add('button')
 p.innerHTML =  `<h2 id="new">Start new Game</h2>`
 StartOver.appendChild(p)
@@ -92,7 +92,8 @@ function newGame(){
         prevGuesses.innerHTML = ''
         guessReamain.innerHTML =`${10 - remguess}` 
         subbtn.removeAttribute('disabled')
-        StartOver.removeChild('p')
+        StartOver.removeChild(p)
+        displayMessege('')
         playGame= true
     })
 }
